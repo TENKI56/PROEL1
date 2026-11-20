@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Task 5.1 - SVG Graphical Art</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f9;
+      color: #222;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+      color: #1a202c;
+    }
+
+    p.subtitle {
+      color: #555;
+      margin-bottom: 35px;
+      font-size: 0.95rem;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .art-card {
+      background: #ffffff;
+      padding: 14px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 228px;
+    }
+
+    svg {
+      border: 2px solid #2d3748;
+      background-color: #ffffff;
+      display: block;
+    }
+
+    .label {
+      margin-top: 12px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #2d3748;
+      line-height: 1.3;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Learning Task 5.1: SVG Graphical Art</h1>
+  <p class="subtitle">7 Geometric Compositions (200 &times; 300 px)</p>
+
+  <div class="gallery">
+
+    <!-- 1. Line and Circle -->
+    <div class="art-card">
+      <svg width="200" height="300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Concentric Target Circles -->
+        <circle cx="100" cy="150" r="95" fill="#1d3557" />
+        <circle cx="100" cy="150" r="72" fill="#457b9d" />
+        <circle cx="100" cy="150" r="50" fill="#a8dadc" />
+        <circle cx="100" cy="150" r="28" fill="#e63946" />
+
+        <!-- Intersecting Grid & Diagonal Lines -->
+        <line x1="100" y1="0" x2="100" y2="300" stroke="#f1faee" stroke-width="3" />
+        <line x1="0" y1="150" x2="200" y2="150" stroke="#f1faee" stroke-width="3" />
+        <line x1="0" y1="0" x2="200" y2="300" stroke="#1d3557" stroke-width="2" />
+        <line x1="200" y1="0" x2="0" y2="300" stroke="#1d3557" stroke-width="2" />
+
+        <!-- Accent Orbit Nodes -->
+        <circle cx="100" cy="40" r="10" fill="#e63946" stroke="#ffffff" stroke-width="2" />
+        <circle cx="100" cy="260" r="10" fill="#e63946" stroke="#ffffff" stroke-width="2" />
+        <circle cx="35" cy="150" r="8" fill="#1d3557" stroke="#ffffff" stroke-width="2" />
+        <circle cx="165" cy="150" r="8" fill="#1d3557" stroke="#ffffff" stroke-width="2" />
+      </svg>
+      <div class="label">1. Line and Circle</div>
+    </div>
+
+    <!-- 2. Circle and Rectangle -->
+    <div class="art-card">
+      <svg width="200" height="300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Bauhaus Color Blocks -->
+        <rect x="0" y="0" width="200" height="300" fill="#f4a261" />
+        <rect x="0" y="0" width="100" height="150" fill="#264653" />
+        <rect x="100" y="150" width="100" height="150" fill="#2a9d8f" />
+        <rect x="20" y="130" width="160" height="40" fill="#e9c46a" />
+
+        <!-- Geometric Circles -->
+        <circle cx="100" cy="75" r="45" fill="#e76f51" />
+        <circle cx="100" cy="75" r="20" fill="#f4a261" />
+        <circle cx="100" cy="225" r="45" fill="#264653" />
+        <circle cx="100" cy="225" r="20" fill="#e9c46a" />
+        <circle cx="45" cy="150" r="12" fill="#264653" />
+        <circle cx="155" cy="150" r="12" fill="#e76f51" />
+      </svg>
+      <div class="label">2. Circle and Rectangle</div>
+    </div>
+
+    <!-- 3. Polyline and Circle -->
+    <div class="art-card">
+      <svg width="200" height="300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Flowing Polyline Waves -->
+        <polyline points="0,40 50,15 100,40 150,15 200,40" fill="none" stroke="#ff6b6b" stroke-width="8" stroke-linecap="round" />
+        <polyline points="0,100 50,75 100,100 150,75 200,100" fill="none" stroke="#4ecdc4" stroke-width="8" stroke-linecap="round" />
+        <polyline points="0,160 50,135 100,160 150,135 200,160" fill="none" stroke="#ffe66d" stroke-width="8" stroke-linecap="round" />
+        <polyline points="0,220 50,195 100,220 150,195 200,220" fill="none" stroke="#1a535c" stroke-width="8" stroke-linecap="round" />
+        <polyline points="0,280 50,255 100,280 150,255 200,280" fill="none" stroke="#ff6b6b" stroke-width="8" stroke-linecap="round" />
+
+        <!-- Floating Circles Between Peaks -->
+        <circle cx="50" cy="50" r="14" fill="#1a535c" />
+        <circle cx="150" cy="50" r="14" fill="#4ecdc4" />
+        <circle cx="100" cy="120" r="16" fill="#ff6b6b" />
+        <circle cx="50" cy="180" r="14" fill="#4ecdc4" />
+        <circle cx="150" cy="180" r="14" fill="#1a535c" />
+        <circle cx="100" cy="240" r="16" fill="#ffe66d" stroke="#1a535c" stroke-width="3" />
+      </svg>
+      <div class="label">3. Polyline and Circle</div>
+    </div>
+
+    <!-- 4. Polygon and Ellipse -->
+    <div class="art-card">
+      <svg width="200" height="300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Diamond & Starburst Polygons -->
+        <polygon points="100,10 190,150 100,290 10,150" fill="#3d348b" />
+        <polygon points="100,40 165,150 100,260 35,150" fill="#7678ed" />
+        <polygon points="0,0 70,0 0,70" fill="#f7b801" />
+        <polygon points="200,0 130,0 200,70" fill="#f7b801" />
+        <polygon points="0,300 70,300 0,230" fill="#f7b801" />
+        <polygon points="200,300 130,300 200,230" fill="#f7b801" />
+
+        <!-- Layered Ellipses -->
+        <ellipse cx="100" cy="150" rx="45" ry="75" fill="#f18701" />
+        <ellipse cx="100" cy="150" rx="65" ry="25" fill="#f35b04" opacity="0.85" />
+        <ellipse cx="100" cy="150" rx="18" ry="18" fill="#ffffff" />
+      </svg>
+      <div class="label">4. Polygon and Ellipse</div>
+    </div>
+
+    <!-- 5. Circle, Line and Rectangle -->
+    <div class="art-card">
+      <svg width="200" height="300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Architectural Background Rectangles -->
+        <rect x="0" y="0" width="200" height="300" fill="#edf2f4" />
+        <rect x="20" y="20" width="160" height="80" fill="#2b2d42" />
+        <rect x="20" y="200" width="160" height="80" fill="#8d99ae" />
+
+        <!-- Structural Vertical & Horizontal Lines -->
+        <line x1="60" y1="0" x2="60" y2="300" stroke="#ef233c" stroke-width="3" />
+        <line x1="100" y1="0" x2="100" y2="300" stroke="#2b2d42" stroke-width="2" />
+        <line x1="140" y1="0" x2="140" y2="300" stroke="#ef233c" stroke-width="3" />
+        <line x1="0" y1="150" x2="200" y2="150" stroke="#2b2d42" stroke-width="4" />
+
+        <!-- Node Circles -->
+        <circle cx="60" cy="60" r="15" fill="#ef233c" />
+        <circle cx="140" cy="60" r="15" fill="#edf2f4" />
+        <circle cx="100" cy="150" r="24" fill="#d90429" stroke="#edf2f4" stroke-width="4" />
+        <circle cx="60" cy="240" r="15" fill="#2b2d42" />
+        <circle cx="140" cy="240" r="15" fill="#ef233c" />
+      </svg>
+      <div class="label">5. Circle, Line and Rectangle</div>
+    </div>
+
+    <!-- 6. Polyline and Polygon -->
+    <div class="art-card">
+      <svg width="200" height="300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Hexagonal Polygons -->
+        <polygon points="100,20 155,52 155,115 100,147 45,115 45,52" fill="#006d77" />
+        <polygon points="100,153 155,185 155,248 100,280 45,248 45,185" fill="#e29578" />
+        <polygon points="100,45 130,63 130,100 100,118 70,100 70,63" fill="#83c5be" />
+        <polygon points="100,178 130,196 130,233 100,251 70,233 70,196" fill="#ffddd2" />
+
+        <!-- Zigzag Framing Polylines -->
+        <polyline points="15,10 35,45 15,80 35,115 15,150 35,185 15,220 35,255 15,290" fill="none" stroke="#e29578" stroke-width="5" />
+        <polyline points="185,10 165,45 185,80 165,115 185,150 165,185 185,220 165,255 185,290" fill="none" stroke="#006d77" stroke-width="5" />
+      </svg>
+      <div class="label">6. Polyline and Polygon</div>
+    </div>
+
+    <!-- 7. Circle, Rectangle, Polyline, Polygon and Ellipse -->
+    <div class="art-card">
+      <svg width="200" height="300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Rectangle: Sky & Horizon Backdrop -->
+        <rect x="0" y="0" width="200" height="190" fill="#1d2d44" />
+        <rect x="0" y="190" width="200" height="110" fill="#3e5c76" />
+
+        <!-- Circle: Full Moon -->
+        <circle cx="145" cy="55" r="26" fill="#f0ebd8" />
+
+        <!-- Ellipse: Cloud & Water Reflection -->
+        <ellipse cx="75" cy="70" rx="42" ry="14" fill="#748cab" opacity="0.8" />
+        <ellipse cx="145" cy="245" rx="35" ry="8" fill="#f0ebd8" opacity="0.5" />
+
+        <!-- Polygon: Mountain Peaks -->
+        <polygon points="0,190 75,95 150,190" fill="#0d1321" />
+        <polygon points="85,190 155,110 200,190" fill="#1d2d44" stroke="#748cab" stroke-width="2" />
+
+        <!-- Polyline: Water Ripples -->
+        <polyline points="20,215 60,210 100,215 140,210 180,215" fill="none" stroke="#f0ebd8" stroke-width="3" />
+        <polyline points="35,270 80,265 125,270 170,265" fill="none" stroke="#748cab" stroke-width="3" />
+      </svg>
+      <div class="label">7. Circle, Rectangle, Polyline, Polygon and Ellipse</div>
+    </div>
+
+  </div>
+
+</body>
+</html>

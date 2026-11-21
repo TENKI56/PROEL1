@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wireframe Layout - Vertical Cards</title>
+    <title>Portfolio - Learning Tasks</title>
     <style>
         * {
             box-sizing: border-box;
@@ -22,7 +22,7 @@
         }
 
         /* -------------------------------------------------------------
-           HEADER LAYOUT (Link one, Link two, Link three | Logo | Search)
+           HEADER LAYOUT
            ------------------------------------------------------------- */
         header {
             display: flex;
@@ -140,7 +140,6 @@
             flex-grow: 1;
         }
 
-        /* Card Container holding Header ON TOP of Image Box */
         .wireframe-card {
             display: flex;
             flex-direction: column;
@@ -170,11 +169,15 @@
             background-color: #e5e7eb;
             border-radius: 6px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
+            gap: 12px;
             width: 100%;
             cursor: pointer;
             border: 1px solid #d1d5db;
+            text-decoration: none;
+            color: #374151;
             transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
         }
 
@@ -182,6 +185,12 @@
             background-color: #dbe0e6;
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-link-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1f2937;
         }
 
         /* Section 1: Hero Container */
@@ -200,7 +209,6 @@
             border: 2px solid #9ca3af;
         }
 
-        /* Sun Element */
         .pure-css-graphic-2 .css-sun {
             width: 18px;
             height: 18px;
@@ -211,7 +219,6 @@
             left: 35px;
         }
 
-        /* Mountain Back */
         .pure-css-graphic-2 .css-mountain-1 {
             width: 0;
             height: 0;
@@ -223,7 +230,6 @@
             left: 10px;
         }
 
-        /* Mountain Front */
         .pure-css-graphic-2 .css-mountain-2 {
             width: 0;
             height: 0;
@@ -405,7 +411,7 @@
     <header>
         <!-- Left: Navigation links -->
         <nav class="nav-links">
-            <a href="#link1">Link one</a>
+            <a href="SVG/learning-task-5-1.html">Learning Task 5.1 (SVG)</a>
             <a href="#link2">Link two</a>
             <a href="#link3">Link three</a>
         </nav>
@@ -413,136 +419,10 @@
         <!-- Center: Pure CSS Logo Element #1 + Logo Text -->
         <div class="logo-container" id="brandLogo">
             <div class="pure-css-logo-1" title="Pure CSS Logo Element #1"></div>
-            <span class="logo-text">Logo</span>
+            <span class="logo-text">Portfolio</span>
         </div>
 
         <!-- Right: Search Icon & Interactive Input Box -->
         <div class="search-container">
             <button class="search-btn" id="searchToggleBtn" aria-label="Search">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-            </button>
-            <input type="text" id="searchInput" class="search-input-box" placeholder="Search elements...">
-        </div>
-    </header>
-
-    <!-- 2. MAIN WIREFRAME CONTENT -->
-    <main>
-        <!-- Section 1: Top Hero Card (Header ON TOP of Image) -->
-        <section class="wireframe-card section-1">
-            <div class="card-header-title">Featured Header Banner</div>
-            <div class="wireframe-image-box" onclick="openModal('Hero Graphic Section', 'This main hero banner block displays the header text directly above the Pure CSS landscape element.')">
-                <!-- Pure CSS Image/Icon Graphic Element #2 -->
-                <div class="pure-css-graphic-2" title="Pure CSS Image Placeholder Graphic #2">
-                    <div class="css-sun"></div>
-                    <div class="css-mountain-1"></div>
-                    <div class="css-mountain-2"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 2: Middle 3-Column Grid Cards (Each Card Header ON TOP of Image) -->
-        <section class="section-2-grid">
-            <!-- Card 1 -->
-            <div class="wireframe-card">
-                <div class="card-header-title">Card Header One</div>
-                <div class="wireframe-image-box" onclick="openModal('Card One', 'First grid item featuring its header stacked on top of the image container.')">
-                    <div class="placeholder-icon">
-                        <div class="sun-dot"></div>
-                        <div class="m-1"></div>
-                        <div class="m-2"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="wireframe-card">
-                <div class="card-header-title">Card Header Two</div>
-                <div class="wireframe-image-box" onclick="openModal('Card Two', 'Second grid item featuring its header stacked on top of the image container.')">
-                    <div class="placeholder-icon">
-                        <div class="sun-dot"></div>
-                        <div class="m-1"></div>
-                        <div class="m-2"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="wireframe-card">
-                <div class="card-header-title">Card Header Three</div>
-                <div class="wireframe-image-box" onclick="openModal('Card Three', 'Third grid item featuring its header stacked on top of the image container.')">
-                    <div class="placeholder-icon">
-                        <div class="sun-dot"></div>
-                        <div class="m-1"></div>
-                        <div class="m-2"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 3: Bottom Large Banner Card (Header ON TOP of Image) -->
-        <section class="wireframe-card section-3">
-            <div class="card-header-title">Bottom Section Header</div>
-            <div class="wireframe-image-box" onclick="openModal('Bottom Section', 'Bottom large banner layout displaying the section header on top of the image block.')">
-                <div class="placeholder-icon">
-                    <div class="sun-dot"></div>
-                    <div class="m-1"></div>
-                    <div class="m-2"></div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Modal Box Element -->
-    <div class="modal-overlay" id="infoModal">
-        <div class="modal-content">
-            <h3 class="modal-title" id="modalTitle">Wireframe Block</h3>
-            <p class="modal-desc" id="modalDesc">Details about this wireframe element.</p>
-            <button class="modal-btn" onclick="closeModal()">Close</button>
-        </div>
-    </div>
-
-    <!-- INTERACTIVE JAVASCRIPT -->
-    <script>
-        const searchToggleBtn = document.getElementById('searchToggleBtn');
-        const searchInput = document.getElementById('searchInput');
-        const infoModal = document.getElementById('infoModal');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalDesc = document.getElementById('modalDesc');
-
-        // Search bar toggle
-        searchToggleBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            searchInput.classList.toggle('active');
-            if (searchInput.classList.contains('active')) {
-                searchInput.focus();
-            }
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!searchInput.contains(e.target) && !searchToggleBtn.contains(e.target)) {
-                searchInput.classList.remove('active');
-            }
-        });
-
-        // Modal triggers
-        function openModal(title, text) {
-            modalTitle.textContent = title;
-            modalDesc.textContent = text;
-            infoModal.classList.add('active');
-        }
-
-        function closeModal() {
-            infoModal.classList.remove('active');
-        }
-
-        infoModal.addEventListener('click', (e) => {
-            if (e.target === infoModal) {
-                closeModal();
-            }
-        });
-    </script>
-</body>
-</html>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke

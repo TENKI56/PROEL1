@@ -1,1 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Task 6.2 - SVG Animated Icon</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f9;
+      color: #1f2937;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 6px;
+      color: #111827;
+    }
+
+    p.subtitle {
+      font-size: 0.95rem;
+      color: #4b5563;
+      margin-bottom: 24px;
+    }
+
+    .canvas-wrapper {
+      background: #ffffff;
+      padding: 18px;
+      border-radius: 16px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+    }
+
+    svg {
+      display: block;
+      border-radius: 12px;
+      background-color: #0f172a;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Learning Task 6.2: SVG Animated Object</h1>
+  <p class="subtitle">Dimensions: 300 &times; 300 px</p>
+
+  <div class="canvas-wrapper">
+    <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+      <!-- Night Sky Background -->
+      <rect width="300" height="300" rx="12" fill="#0f172a" />
+
+      <!-- Pulsing Radar / Orbit Rings -->
+      <circle cx="150" cy="150" r="60" fill="none" stroke="#38bdf8" stroke-width="1.5" opacity="0.25">
+        <animate attributeName="r" values="55;125;55" dur="4s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.35;0;0.35" dur="4s" repeatCount="indefinite" />
+      </circle>
+
+      <!-- Twinkling Background Stars -->
+      <circle cx="50" cy="60" r="2.5" fill="#f8fafc">
+        <animate attributeName="opacity" values="0.2;1;0.2" dur="1.8s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="245" cy="75" r="3" fill="#fde047">
+        <animate attributeName="opacity" values="1;0.2;1" dur="2.2s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="70" cy="210" r="2" fill="#f8fafc">
+        <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="235" cy="220" r="2.5" fill="#38bdf8">
+        <animate attributeName="opacity" values="1;0.15;1" dur="2s" repeatCount="indefinite" />
+      </circle>
+
+      <!-- Speed Lines Streaking Downward -->
+      <line x1="65" y1="-30" x2="65" y2="10" stroke="#64748b" stroke-width="2" stroke-linecap="round">
+        <animateTransform attributeName="transform" type="translate" from="0 0" to="0 340" dur="1.1s" repeatCount="indefinite" />
+      </line>
+      <line x1="235" y1="-50" x2="235" y2="-5" stroke="#64748b" stroke-width="2" stroke-linecap="round">
+        <animateTransform attributeName="transform" type="translate" from="0 0" to="0 360" dur="0.9s" repeatCount="indefinite" />
+      </line>
+      <line x1="95" y1="-20" x2="95" y2="15" stroke="#475569" stroke-width="1.5" stroke-linecap="round">
+        <animateTransform attributeName="transform" type="translate" from="0 0" to="0 330" dur="1.4s" repeatCount="indefinite" />
+      </line>
+
+      <!-- Rocket Group (Gentle Hovering / Thrust Oscillation) -->
+      <g>
+        <animateTransform
+          attributeName="transform"
+          type="translate"
+          values="0,4; 0,-6; 0,4"
+          dur="1.4s"
+          repeatCount="indefinite"
+        />
+
+        <!-- Animated Thruster Flame (Outer) -->
+        <polygon points="134,205 166,205 150,255" fill="#f97316">
+          <animate
+            attributeName="points"
+            values="134,205 166,205 150,252; 134,205 166,205 150,268; 134,205 166,205 150,248; 134,205 166,205 150,252"
+            dur="0.35s"
+            repeatCount="indefinite"
+          />
+        </polygon>
+
+        <!-- Animated Thruster Flame (Inner Core) -->
+        <polygon points="140,205 160,205 150,238" fill="#fde047">
+          <animate
+            attributeName="points"
+            values="140,205 160,205 150,235; 140,205 160,205 150,248; 140,205 160,205 150,232; 140,205 160,205 150,235"
+            dur="0.28s"
+            repeatCount="indefinite"
+          />
+        </polygon>
+
+        <!-- Left & Right Fins -->
+        <polygon points="122,165 98,200 124,195" fill="#ef4444" />
+        <polygon points="178,165 202,200 176,195" fill="#ef4444" />
+
+        <!-- Exhaust Nozzle -->
+        <polygon points="136,195 164,195 168,206 132,206" fill="#475569" />
+
+        <!-- Rocket Main Body -->
+        <path d="M 150,55 C 122,95 120,145 124,195 L 176,195 C 180,145 178,95 150,55 Z" fill="#f8fafc" />
+
+        <!-- Red Nose Cone -->
+        <path d="M 150,55 C 138,72 132,86 129,98 L 171,98 C 168,86 162,72 150,55 Z" fill="#ef4444" />
+
+        <!-- Porthole Window -->
+        <circle cx="150" cy="135" r="18" fill="#334155" />
+        <circle cx="150" cy="135" r="13" fill="#38bdf8" />
+        <circle cx="145" cy="130" r="4" fill="#e0f2fe" opacity="0.8" />
+      </g>
+
+      <!-- Exhaust Smoke Puffs Drifting Downward -->
+      <circle cx="142" cy="255" r="8" fill="#cbd5e1" opacity="0.7">
+        <animate attributeName="cy" values="245;295" dur="1s" repeatCount="indefinite" />
+        <animate attributeName="r" values="6;18" dur="1s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.75;0" dur="1s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="158" cy="260" r="8" fill="#94a3b8" opacity="0.7">
+        <animate attributeName="cy" values="250;300" dur="1.2s" repeatCount="indefinite" />
+        <animate attributeName="r" values="7;20" dur="1.2s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.7;0" dur="1.2s" repeatCount="indefinite" />
+      </circle>
+    </svg>
+  </div>
+
+</body>
+</html>

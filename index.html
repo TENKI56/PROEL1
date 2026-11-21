@@ -325,71 +325,6 @@
             border-bottom-width: 34px;
         }
 
-        /* Interactive Modal Box */
-        .modal-overlay {
-            position: fixed;
-            inset: 0;
-            background-color: rgba(0, 0, 0, 0.4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.25s ease;
-            z-index: 100;
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .modal-content {
-            background-color: #ffffff;
-            padding: 24px;
-            border-radius: 8px;
-            max-width: 420px;
-            width: 90%;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-            text-align: center;
-            transform: translateY(10px);
-            transition: transform 0.25s ease;
-        }
-
-        .modal-overlay.active .modal-content {
-            transform: translateY(0);
-        }
-
-        .modal-title {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: #111827;
-        }
-
-        .modal-desc {
-            font-size: 14px;
-            color: #6b7280;
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-
-        .modal-btn {
-            background-color: #374151;
-            color: #ffffff;
-            border: none;
-            padding: 8px 20px;
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .modal-btn:hover {
-            background-color: #111827;
-        }
-
         /* Responsive Mobile Layout */
         @media (max-width: 768px) {
             body {
@@ -425,4 +360,104 @@
         <!-- Right: Search Icon & Interactive Input Box -->
         <div class="search-container">
             <button class="search-btn" id="searchToggleBtn" aria-label="Search">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+            <input type="text" id="searchInput" class="search-input-box" placeholder="Search elements...">
+        </div>
+    </header>
+
+    <!-- 2. MAIN WIREFRAME CONTENT -->
+    <main>
+        <!-- Section 1: Learning Task 5.1 -->
+        <section class="wireframe-card section-1">
+            <div class="card-header-title">Learning Task 5.1: SVG Graphical Art</div>
+            <a href="SVG/learning-task-5-1.html" class="wireframe-image-box">
+                <div class="pure-css-graphic-2">
+                    <div class="css-sun"></div>
+                    <div class="css-mountain-1"></div>
+                    <div class="css-mountain-2"></div>
+                </div>
+                <span class="card-link-label">Open Learning Task 5.1 &rarr;</span>
+            </a>
+        </section>
+
+        <!-- Section 2: Learning Tasks Grid -->
+        <section class="section-2-grid">
+            <!-- Card 1: Learning Task 6.1 -->
+            <div class="wireframe-card">
+                <div class="card-header-title">Learning Task 6.1: SVG Text Art</div>
+                <a href="SVG/learning-task-6-1.html" class="wireframe-image-box">
+                    <div class="placeholder-icon">
+                        <div class="sun-dot"></div>
+                        <div class="m-1"></div>
+                        <div class="m-2"></div>
+                    </div>
+                    <span class="card-link-label">Open Task 6.1 &rarr;</span>
+                </a>
+            </div>
+
+            <!-- Card 2: Learning Task 6.2 -->
+            <div class="wireframe-card">
+                <div class="card-header-title">Learning Task 6.2: Animated SVG</div>
+                <a href="SVG/learning-task-6-2.html" class="wireframe-image-box">
+                    <div class="placeholder-icon">
+                        <div class="sun-dot"></div>
+                        <div class="m-1"></div>
+                        <div class="m-2"></div>
+                    </div>
+                    <span class="card-link-label">Open Task 6.2 &rarr;</span>
+                </a>
+            </div>
+
+            <!-- Card 3: Upcoming Task -->
+            <div class="wireframe-card">
+                <div class="card-header-title">Upcoming Learning Task</div>
+                <div class="wireframe-image-box">
+                    <div class="placeholder-icon">
+                        <div class="sun-dot"></div>
+                        <div class="m-1"></div>
+                        <div class="m-2"></div>
+                    </div>
+                    <span class="card-link-label">Coming Soon</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Bottom Large Banner Card -->
+        <section class="wireframe-card section-3">
+            <div class="card-header-title">All SVG Learning Tasks</div>
+            <a href="SVG/learning-task-6-2.html" class="wireframe-image-box">
+                <div class="placeholder-icon">
+                    <div class="sun-dot"></div>
+                    <div class="m-1"></div>
+                    <div class="m-2"></div>
+                </div>
+                <span class="card-link-label">View Latest Animated SVG (Task 6.2) &rarr;</span>
+            </a>
+        </section>
+    </main>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script>
+        const searchToggleBtn = document.getElementById('searchToggleBtn');
+        const searchInput = document.getElementById('searchInput');
+
+        searchToggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            searchInput.classList.toggle('active');
+            if (searchInput.classList.contains('active')) {
+                searchInput.focus();
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!searchInput.contains(e.target) && !searchToggleBtn.contains(e.target)) {
+                searchInput.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

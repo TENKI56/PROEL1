@@ -1,1 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Task 6.1 - SVG Text Art</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f9;
+      color: #1f2937;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 20px;
+    }
+
+    h1 {
+      font-size: 1.7rem;
+      margin-bottom: 6px;
+      color: #111827;
+    }
+
+    p.subtitle {
+      font-size: 0.95rem;
+      color: #4b5563;
+      margin-bottom: 24px;
+    }
+
+    .canvas-wrapper {
+      background: #ffffff;
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    svg {
+      display: block;
+      border: 2px solid #e5e7eb;
+      background-color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Learning Task 6.1: SVG Text Art</h1>
+  <p class="subtitle">Dimensions: 900 &times; 780 px</p>
+
+  <div class="canvas-wrapper">
+    <svg width="900" height="780" viewBox="0 0 900 780" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- Path 1: Left Outer Wing (Sweeping upward) -->
+        <path id="leftWingOuter" d="M 430,450 C 310,410 170,310 110,160" />
+        <!-- Path 2: Right Outer Wing (Sweeping upward) -->
+        <path id="rightWingOuter" d="M 790,160 C 730,310 590,410 470,450" />
+
+        <!-- Path 3: Left Middle Wing Feather -->
+        <path id="leftWingMid" d="M 435,485 C 330,455 225,380 175,255" />
+        <!-- Path 4: Right Middle Wing Feather -->
+        <path id="rightWingMid" d="M 725,255 C 675,380 570,455 465,485" />
+
+        <!-- Path 5: Left Inner Wing Feather -->
+        <path id="leftWingInner" d="M 440,515 C 365,495 290,440 245,345" />
+        <!-- Path 6: Right Inner Wing Feather -->
+        <path id="rightWingInner" d="M 655,345 C 610,440 535,495 460,515" />
+
+        <!-- Path 7: Rising Central Pillar (Vertical spine) -->
+        <path id="centralSpine" d="M 450,620 L 450,150" />
+
+        <!-- Path 8: Crown Halo Arc -->
+        <path id="crownArc" d="M 335,190 A 120,120 0 0,1 565,190" />
+
+        <!-- Path 9: Ground / Fall Wave Line (Bottom base) -->
+        <path id="groundWave" d="M 120,665 Q 285,715 450,665 T 780,665" />
+
+        <!-- Path 10: Inner Base Support Arc -->
+        <path id="baseSupport" d="M 240,620 Q 450,550 660,620" />
+      </defs>
+
+      <!-- Subtle Guide Paths (faint watermark style to accentuate the symbol silhouette) -->
+      <use href="#leftWingOuter" fill="none" stroke="#fde8e8" stroke-width="2" />
+      <use href="#rightWingOuter" fill="none" stroke="#fde8e8" stroke-width="2" />
+      <use href="#crownArc" fill="none" stroke="#fef3c7" stroke-width="2" />
+      <use href="#groundWave" fill="none" stroke="#e2e8f0" stroke-width="2" />
+
+      <!-- OUTER WINGS: "TRUE EMBARRASSMENT IS NOT STANDING" -->
+      <text fill="#dc2626" font-family="Georgia, serif" font-size="19" font-weight="bold" letter-spacing="2">
+        <textPath href="#leftWingOuter" startOffset="50%" text-anchor="middle">
+          TRUE EMBARRASSMENT IS NOT STANDING
+        </textPath>
+      </text>
+
+      <text fill="#dc2626" font-family="Georgia, serif" font-size="19" font-weight="bold" letter-spacing="2">
+        <textPath href="#rightWingOuter" startOffset="50%" text-anchor="middle">
+          STANDING AFTER SUCH A FALL
+        </textPath>
+      </text>
+
+      <!-- MIDDLE WINGS: "FALLING DOWN IS NOT AN EMBARRASSMENT" -->
+      <text fill="#ea580c" font-family="Verdana, sans-serif" font-size="15" font-weight="bold" letter-spacing="1.5">
+        <textPath href="#leftWingMid" startOffset="50%" text-anchor="middle">
+          FALLING DOWN IS NOT AN EMBARRASSMENT
+        </textPath>
+      </text>
+
+      <text fill="#ea580c" font-family="Verdana, sans-serif" font-size="15" font-weight="bold" letter-spacing="1.5">
+        <textPath href="#rightWingMid" startOffset="50%" text-anchor="middle">
+          FALLING DOWN IS NOT AN EMBARRASSMENT
+        </textPath>
+      </text>
+
+      <!-- INNER WINGS: "RISE AGAIN • STAND TALL" -->
+      <text fill="#f59e0b" font-family="Trebuchet MS, sans-serif" font-size="13" font-weight="bold" letter-spacing="2">
+        <textPath href="#leftWingInner" startOffset="50%" text-anchor="middle">
+          NOT AN EMBARRASSMENT
+        </textPath>
+      </text>
+
+      <text fill="#f59e0b" font-family="Trebuchet MS, sans-serif" font-size="13" font-weight="bold" letter-spacing="2">
+        <textPath href="#rightWingInner" startOffset="50%" text-anchor="middle">
+          AFTER SUCH A FALL
+        </textPath>
+      </text>
+
+      <!-- CENTRAL RISING SPINE -->
+      <text fill="#991b1b" font-family="Impact, Arial Black, sans-serif" font-size="26" letter-spacing="5">
+        <textPath href="#centralSpine" startOffset="50%" text-anchor="middle">
+          STANDING AFTER A FALL
+        </textPath>
+      </text>
+
+      <!-- TOP CROWN HALO -->
+      <text fill="#b45309" font-family="Georgia, serif" font-size="18" font-weight="bold" letter-spacing="3">
+        <textPath href="#crownArc" startOffset="50%" text-anchor="middle">
+          TRUE EMBARRASSMENT
+        </textPath>
+      </text>
+
+      <!-- INNER BASE SUPPORT ARC -->
+      <text fill="#1e293b" font-family="Segoe UI, sans-serif" font-size="17" font-weight="700" letter-spacing="2">
+        <textPath href="#baseSupport" startOffset="50%" text-anchor="middle">
+          "Falling down is not an embarrassment."
+        </textPath>
+      </text>
+
+      <!-- BOTTOM GROUND WAVE (THE FALL) -->
+      <text fill="#475569" font-family="Georgia, serif" font-size="18" font-style="italic" font-weight="bold" letter-spacing="1.5">
+        <textPath href="#groundWave" startOffset="50%" text-anchor="middle">
+          "True embarrassment is not standing after such a fall."
+        </textPath>
+      </text>
+    </svg>
+  </div>
+
+</body>
+</html>
